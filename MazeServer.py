@@ -236,6 +236,7 @@ if __name__ == '__main__':
     with open("maze1.txt","r") as infile:
         raw_input = infile.readlines()
         maze_rows = [datum.strip('\n') for datum in raw_input]
+    print((host, int(port)))
     s = MazeServer(localaddr=(host, int(port)))
     s.maze_rows = maze_rows
     s.Launch()

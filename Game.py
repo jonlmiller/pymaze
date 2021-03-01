@@ -19,7 +19,7 @@ from GameState import GameState
 class Game():
     """Manager for pygame"""
 
-    def __init__(self, maze_filename):
+    def __init__(self, maze_filename, host, port):
         """Initialize the game manager object.
 
         Arguments:
@@ -44,7 +44,7 @@ class Game():
                     break
                 print(f"Unknown color code: '{new_color_text}''. Please try again.")
             print(f"Selected {gs.color}.")
-            gs.connection = MazeClient('127.0.0.1', 8089)
+            gs.connection = MazeClient(host, port)
             gs.connection.Loop()
             # server will send the maze data
             while not gs.maze:
